@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smartboard Buddy</title>
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="tools-container">
+
+            <!-- Timer Tool -->
+            <div class="tool-card">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0" data-lang="timer"><i class="fas fa-clock"></i> Timer</h5>
+                    </div>
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                        <div class="timer-display text-center mb-4">00:00:00</div>
+                        <div class="timer-controls d-flex justify-content-center gap-3">
+                            <button class="btn btn-primary btn-lg rounded-circle" id="startTimer"><i class="fas fa-play"></i></button>
+                            <button class="btn btn-warning btn-lg rounded-circle" id="pauseTimer"><i class="fas fa-pause"></i></button>
+                            <button class="btn btn-danger btn-lg rounded-circle" id="resetTimer"><i class="fas fa-undo"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Notepad -->
+            <div class="tool-card">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0" data-lang="notepad"><i class="fas fa-note-sticky"></i> Quick Notepad</h5>
+                    </div>
+                    <div class="card-body">
+                        <textarea class="form-control" id="quickNote" data-lang-placeholder="notepad-placeholder"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Random Student Picker -->
+            <div class="tool-card">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0" data-lang="student-picker"><i class="fas fa-user-graduate"></i> Student Picker</h5>
+                    </div>
+                    <div class="card-body">
+                        <textarea class="form-control mb-3" id="studentList" data-lang-placeholder="student-list-placeholder"></textarea>
+                        <button class="btn btn-primary w-100" id="pickStudent" data-lang="pick-student">Pick a Student</button>
+                        <div class="selected-student mt-3" id="selectedStudent"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drawing Board -->
+            <div class="tool-card">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0" data-lang="drawing-board"><i class="fas fa-paint-brush"></i> Drawing Board</h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="drawingBoard"></canvas>
+                        <div class="drawing-controls">
+                            <button class="btn btn-danger" id="clearCanvas" data-lang="clear">Clear</button>
+                            <input type="color" id="colorPicker" class="form-control form-control-color">
+                            <input type="range" id="brushSize" min="1" max="20" value="5" class="form-range">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Noise Meter -->
+            <div class="tool-card">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0" data-lang="noise-meter"><i class="fas fa-volume-up"></i> Noise Meter</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="noise-meter-display">
+                            <div class="noise-level" id="noiseLevel"></div>
+                        </div>
+                        <button class="btn btn-primary w-100 mt-3" id="startNoiseMeter" data-lang="start-noise-meter">Start Noise Meter</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Group Creator -->
+            <div class="tool-card">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0" data-lang="group-creator"><i class="fas fa-users"></i> Group Creator</h5>
+                    </div>
+                    <div class="card-body">
+                        <textarea class="form-control mb-3" id="groupStudentList" data-lang-placeholder="group-student-list-placeholder"></textarea>
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control" id="groupSize" min="2" value="2">
+                            <button class="btn btn-primary" id="createGroups" data-lang="create-groups">Create Groups</button>
+                        </div>
+                        <div class="groups-result" id="groupsResult"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="footer-center">
+                <div class="copyright">
+                    Smartboard Buddy
+                    <span class="separator">|</span>
+                    <a data-lang="by"></a> <a href="https://github.com/ufuayk" target="_blank">Ufuk</a>
+                </div>
+                <div class="credit" data-lang="credit"></div>
+            </div>
+            <div class="footer-right">
+                <div class="language-buttons">
+                    <button onclick="changeLanguage('en')" class="btn btn-sm btn-outline-primary">EN</button>
+                    <button onclick="changeLanguage('es')" class="btn btn-sm btn-outline-primary">ES</button>
+                    <button onclick="changeLanguage('tr')" class="btn btn-sm btn-outline-primary">TR</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="lib/bootstrap.bundle.min.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
