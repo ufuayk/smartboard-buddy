@@ -2,8 +2,6 @@
 
 An interactive web application designed to assist teachers using smart boards in classrooms. The application includes various tools to enhance classroom management and teaching experience.
 
-Smartboard Buddy is an [@sneakersoln](https://github.com/sneakersoln) project.
-
 ## Features
 
 - Digital Timer/Stopwatch
